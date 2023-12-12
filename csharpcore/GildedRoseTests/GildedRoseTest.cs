@@ -1,17 +1,21 @@
 ﻿using System.Collections.Generic;
-using GildedRoseKata;
+using GildedRose;
 using NUnit.Framework;
 
 namespace GildedRoseTests;
 
-public class GildedRoseTest
+public static class GildedRoseTest
 {
     [Test]
-    public void Foo()
+    public static void Foo()
     {
-        var items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
-        var app = new GildedRose(items);
-        app.UpdateQuality();
-        Assert.AreEqual("fixme", items[0].Name);
+        var items = new List<Item>
+        {
+            new() { Name = "foo", SellIn = 0, Quality = 0 }
+        };
+
+        new GildedRose.GildedRose(items).UpdateQuality();
+
+        Assert.That(items[0].Name, Is.EqualTo("fixme"));
     }
 }

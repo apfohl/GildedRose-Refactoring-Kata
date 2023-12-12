@@ -8,16 +8,20 @@ using NUnit.Framework;
 namespace GildedRoseTests;
 
 [UseReporter(typeof(DiffReporter))]
-public class ApprovalTest
+public static class ApprovalTest
 {
+    private static readonly string[] Args = { "30" };
+
     [Test]
-    public void ThirtyDays()
+    public static void ThirtyDays()
     {
         var fakeOutput = new StringBuilder();
+
         Console.SetOut(new StringWriter(fakeOutput));
         Console.SetIn(new StringReader($"a{Environment.NewLine}"));
 
-        TextTestFixture.Main(new string[] { "30" });
+        TextTestFixture.Main(Args);
+
         var output = fakeOutput.ToString();
 
         Approvals.Verify(output);

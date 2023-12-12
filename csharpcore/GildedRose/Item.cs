@@ -1,6 +1,6 @@
-﻿namespace GildedRoseKata;
+﻿namespace GildedRose;
 
-public class Item
+public sealed class Item
 {
     public string Name { get; set; }
     public int SellIn { get; set; }
