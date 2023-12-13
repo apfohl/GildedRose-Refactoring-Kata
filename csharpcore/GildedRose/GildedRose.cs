@@ -19,7 +19,6 @@ public sealed class GildedRose(IEnumerable<Item> items)
                 UpdateBackstagePasses(item);
                 break;
             case "Sulfuras, Hand of Ragnaros":
-                UpdateSulfuras(item);
                 break;
             case "Conjured Mana Cake":
                 UpdateConjured(item);

@@ -49,22 +49,6 @@ public static class QualityUpdatersTests
         Assert.That(item.Quality, Is.EqualTo(resultingQuality));
     }
 
-    [TestCase(5, 10, 5, 10)]
-    public static void UpdateSulfuras_updates_quality_correctly(int sellIn, int quality, int resultingSellIn, int resultingQuality)
-    {
-        var item = new Item
-        {
-            Name = "Sulfuras, Hand of Ragnaros",
-            SellIn = sellIn,
-            Quality = quality
-        };
-
-        UpdateSulfuras(item);
-
-        Assert.That(item.SellIn, Is.EqualTo(resultingSellIn));
-        Assert.That(item.Quality, Is.EqualTo(resultingQuality));
-    }
-
     [TestCase(10, 32, 31)]
     [TestCase(1, 32, 31)]
     [TestCase(0, 32, 30)]
